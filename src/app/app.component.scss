@@ -1,0 +1,30 @@
+.navbar {
+    overflow: hidden;
+    background-color: darkviolet;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none; 
+    cursor: pointer;
+}
+
+.navbar a:hover {
+    background-color: deeppink;
+}
+
+.main {
+    margin-top: 60px;
+}
+
+#logout {
+    float: right;
+    margin-right: 20px;
+}

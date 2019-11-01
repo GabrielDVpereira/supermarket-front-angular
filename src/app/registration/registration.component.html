@@ -1,0 +1,19 @@
+<div class="container">
+    <img src="../../assets/register.png" alt='register' height= 100 width=100>
+    <h1>Register your account and become an Awesome seller!</h1> 
+        <div class="content">
+            <h3>Log up </h3>
+                <input type="email" [(ngModel)]="userData.name" placeholder="Name *"/>
+                <br>
+                <input type="email" [(ngModel)]="userData.email" placeholder="E-mail *"/>
+                <br>
+                <input type={{passwordType}} [(ngModel)]="userData.password" placeholder="Password *"/>
+                <input type="checkbox" (click)="togglePassword()">Show Password
+                <br>
+                <button (click)="registerUser()">REGISTER</button>
+            <div *ngIf = 'errorMessage.length !==  0' class="error">
+                <p> {{ errorMessage }} </p>
+            </div>
+        <div>
+    </div>
+    

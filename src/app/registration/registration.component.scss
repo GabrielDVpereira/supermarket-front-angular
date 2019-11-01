@@ -1,0 +1,81 @@
+.container {
+    display: flex; 
+    background-image: linear-gradient(to right, #f05a5b, #ff0000d7)  ;
+    min-height: 100%; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.container p{ 
+    color: #fff;
+}
+.container div{ 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+h1 {
+    color: #fff;
+}
+.error p {
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.content {
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around; 
+}
+
+button {
+    border: 0;
+    border-radius: 2px;
+    width: 100%;
+    height: 42px;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #f05a5b;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #bd0533 ;
+    
+}
+
+input {
+  margin-bottom: 0px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  height: 20px;
+  padding: 4px 30px;
+  font-size: 16px;
+
+}
+
+.container p {
+    margin-left: 0;
+}   

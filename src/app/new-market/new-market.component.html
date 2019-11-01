@@ -1,0 +1,19 @@
+<h1>Create your own market!</h1>
+    <form [formGroup] = "uploadForm" (ngSubmit)="createMarket()">
+        <div class="form">
+            <label id="thumbnail" >
+                <img [src]="imgURL" alt="" width= "260" height="160" *ngIf="imgURL; else galley">
+                <input #file type="file" name="profile" (change)="onFileSelect($event)" />
+                <span style="color:red;" *ngIf="message">{{message}}</span>
+            </label>
+            <input [(ngModel)] = "name" type = "text" placeholder="Name" [ngModelOptions]="{standalone: true}"/>
+            <select [(ngModel)] = "selectedCategory" [ngModelOptions]="{standalone: true}">                                                                
+                <option *ngFor='let category of categoryArray ' >{{category}}</option>
+            </select>
+            <button type="submit">Create Market</button>
+        </div>
+    </form>
+
+    <ng-template #galley>
+        <img src="../../assets/GalleryIcon.jpg" alt="" width= "50" height="50" >
+    </ng-template>

@@ -1,0 +1,19 @@
+<div class="container">
+    <div>
+        <h1>Go shopping</h1>
+        <img src = "../../assets/store2.png" alt="store" width = '200' height= '120'>
+        <p>Create your stores and sell your products!<p>
+    </div>
+    <div class="content">
+        <a routerLink="/registration">Register</a>
+        <h3>Log in </h3>
+            <input type="email" [(ngModel)]="email" placeholder="E-mail *"/>
+            <br>
+            <input type="password" [(ngModel)]="password" placeholder="Password *"/>
+            <br>
+            <button (click)="authenticate()">LOGIN</button>
+        <div *ngIf = 'errorMessage.length !==  0' class="error">
+            <p> {{ errorMessage }} </p>
+        </div>
+    <div>
+</div>
