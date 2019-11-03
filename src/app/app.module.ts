@@ -17,6 +17,10 @@ import { FormsModule } from '@angular/forms'
 import { MarketService } from './market.service';
 import { RegistrationService } from './registration.service';
 
+import { TokenService } from './token.service';
+import { SharedMarketService } from './shared-market.service'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +37,7 @@ import { RegistrationService } from './registration.service';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [MarketService, RegistrationService],
+  providers: [MarketService, RegistrationService, TokenService, SharedMarketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,11 +6,13 @@
                 <input #file type="file" name="profile" (change)="onFileSelect($event)" />
                 <span style="color:red;" *ngIf="message">{{message}}</span>
             </label>
+            <p>Cool Name</p>
             <input [(ngModel)] = "name" type = "text" placeholder="Name" [ngModelOptions]="{standalone: true}"/>
+            <p>Awesome Category</p>
             <select [(ngModel)] = "selectedCategory" [ngModelOptions]="{standalone: true}">                                                                
                 <option *ngFor='let category of categoryArray ' >{{category}}</option>
             </select>
-            <button type="submit">Create Market</button>
+            <button type="submit">Create Market!</button>
         </div>
     </form>
 

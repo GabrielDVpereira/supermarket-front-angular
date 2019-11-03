@@ -3,6 +3,8 @@ import { MarketService } from '../market.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import * as jwt_decode from "jwt-decode";
 import { Router } from '@angular/router';
+import { SharedMarketService } from '../shared-market.service'
+
 
 @Component({
   selector: 'app-new-market',
@@ -10,7 +12,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./new-market.component.scss']
 })
 export class NewMarketComponent implements OnInit {
-  category: string;
   name: string;
   selectedCategory: string;
   categoryArray: string[] = [
@@ -20,32 +21,33 @@ export class NewMarketComponent implements OnInit {
     "Lazer",
     "Diversos"
   ];
+
   uploadForm: FormGroup;
-
-
   imagePath;
   imgURL: any;
   imageErrorMessage: string;
 
-  constructor(private marketService: MarketService, private formBuilder : FormBuilder, private router: Router) { }
+  constructor(private marketService: MarketService, private formBuilder : FormBuilder, private router: Router, private _marketData: SharedMarketService ) { }
   ngOnInit() {
     this.uploadForm = this.formBuilder.group({
       profile: ['']
     })
-    console.log(this.uploadForm)
   }
   createMarket(){
     let user = this.getDecodedAccessToken();
     const formData = new FormData();
     formData.append('thumbnail', this.uploadForm.get('profile').value);
     formData.append('name', this.name);
-    formData.append('category', this.category);
+    formData.append('category', this.selectedCategory);
     formData.append('owner_id', user._id);
+
+    console.log(this.selectedCategory)
     this.marketService.createMarket(formData).subscribe(
       (response) => {
-        this.router.navigateByUrl('/market/page'); 
-        alert("Market successful created!")
-        console.log(response)
+        const market = response;
+        this._marketData.market = market;
+        this.router.navigateByUrl("/market/page"); 
+        alert("Market successfuly created!")
       }, 
       (err)=>{
         console.log(err);

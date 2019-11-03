@@ -3,9 +3,9 @@
     <h3>{{category}}</h3>
     <div *ngIf="markets" class="container">
         <div *ngFor = "let market of markets" class="content">
-                <div class="card" *ngIf="market.category == category">
-                    <img src={{market.thumbnail_url}} alt="market photo">
-                    <p>{{market.name}}</p>
+                <div class="card" *ngIf="market.category == category" (click)='navigateToPage(market)'>
+                        <img src={{market.thumbnail_url}} alt="market photo">
+                        <p>{{market.name}}</p>
                 <div>
         </div>
     </div>

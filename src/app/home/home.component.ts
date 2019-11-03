@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import  { Market } from '../Market';
 import { MarketService } from '../market.service';
+import { TokenService } from '../token.service';
+import { SharedMarketService } from '../shared-market.service'
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -10,7 +14,7 @@ import { MarketService } from '../market.service';
 export class HomeComponent implements OnInit {
   markets: Market[];
   categories: string[] = [];
-  constructor(private marketService : MarketService) { }
+  constructor(private marketService : MarketService, private tokenService: TokenService, private _marketData: SharedMarketService, private router: Router) { }
 
   ngOnInit() {
     this.marketService.markets().subscribe(
@@ -33,6 +37,11 @@ export class HomeComponent implements OnInit {
         this.categories.push(market.category);
       }
      })
+  }
+
+  navigateToPage(market){
+    this._marketData.market = market; 
+    this.router.navigateByUrl('/market/page');
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from './User';
 import { Router } from '@angular/router';
+
+import { TokenService } from './token.service';
  
 @Component({
   selector: 'app-root',
@@ -10,13 +12,12 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'supermarket-front';
   currentUser: User;
-  token: string;
 
-  constructor( private router: Router){}
+
+  constructor( private router: Router, private tokenService: TokenService){}
 
   ngOnInit(){ 
-    this.token = localStorage.getItem("token")
-    if(this.token){
+    if(this.tokenService.get()){
       this.router.navigateByUrl('/home');
     } else {
       this.router.navigateByUrl('/login');

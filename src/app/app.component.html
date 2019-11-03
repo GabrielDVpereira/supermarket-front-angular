@@ -1,10 +1,11 @@
-    <div [ngClass] = "token ? 'navbar' : 'navbar-none'">
+    <div [ngClass] = "tokenService.get() ? 'navbar' : 'navbar-none'">
         <a routerLink="home">Home</a>
         <a routerLink="#">News</a>
         <a routerLink="market/new">Create a new store</a>
         <a (click)="logout()" id="logout">logout</a>
     </div>     
-    <div [ngClass] = "token ? 'main-navbar' : 'main-navbar-none'">
+    <!-- <div [ngClass] = "tokenService.get() ? 'main-navbar' : 'main-navbar-none'"> -->
+    <div [ngClass] = "tokenService.get() ? 'main-navbar' : 'main-navbar-none'">
         <router-outlet></router-outlet>
     </div>
 
