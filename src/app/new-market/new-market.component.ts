@@ -43,8 +43,8 @@ export class NewMarketComponent implements OnInit {
     formData.append('owner_id', user._id);
     this.marketService.createMarket(formData).subscribe(
       (response) => {
+        this.router.navigateByUrl('/market/page'); 
         alert("Market successful created!")
-        this.router.navigateByUrl('market/page'); 
         console.log(response)
       }, 
       (err)=>{

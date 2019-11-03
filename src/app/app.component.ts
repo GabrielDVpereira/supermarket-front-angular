@@ -14,7 +14,7 @@ export class AppComponent {
 
   constructor( private router: Router){}
 
-  ngOnInit(){
+  ngOnInit(){ 
     this.token = localStorage.getItem("token")
     if(this.token){
       this.router.navigateByUrl('/home');

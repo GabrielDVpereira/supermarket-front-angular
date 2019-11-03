@@ -1,9 +1,13 @@
 .navbar {
+    display: block;
     overflow: hidden;
     background-color: darkviolet;
     position: fixed;
     top: 0;
     width: 100%;
+}
+.navbar-none{
+    display: none;
 }
 
 .navbar a {
@@ -20,8 +24,12 @@
     background-color: deeppink;
 }
 
-.main {
+.main-navbar-none{
+    height: 100%;
+}
+.main-navbar {
     margin-top: 60px;
+    height: 100%;
 }
 
 #logout {

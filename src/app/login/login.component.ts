@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
             localStorage.setItem("token", response.token)
             this.router.navigateByUrl('/home')
           }
-          },
+      },
         (error) => {
           console.log('an error happend: ' + error.error)
           this.errorMessage = error.error;
