@@ -25,7 +25,6 @@ export class LoginService {
   }
 
   handleError(error: HttpErrorResponse){
-    console.log('lalala');
     return throwError(error);
   }
 }

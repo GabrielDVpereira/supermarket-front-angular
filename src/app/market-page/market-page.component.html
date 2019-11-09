@@ -1,1 +1,32 @@
-<p>{{market.name}}</p>
+<h1>{{market.name}}</h1>
+<p>New product</p>
+<button (click)="showCard()">{{cardOn  ? '-' : '+'}}</button>
+<div id="new-product-card"> 
+    <form [formGroup] = "productForm">
+        <label id="thumbnail">
+            <img [src]="imagePreview" alt="" width= "50" height="50" >
+            <input type="file" (change)="onFileSelect($event)"/>
+            Add a photo
+        </label>
+        <label>Name
+            <input placeholder="Name" formControlName="name"/>
+        </label>
+        <label>Price
+            <input placeholder="R$" formControlName="price"/>
+        </label>
+    </form>
+    <button (click)="submitForm()">Create</button>
+</div>
+<div class="container">
+    <h3>Check out some awesome items!</h3>
+    <div class="content">
+        <div class="products" *ngFor = "let product of products">
+            <div class="products">
+                <img src = {{product.thumbnail_url}} heigth = "200px" width = "200px">    
+                <p><strong>{{product.name}}</strong>R$ {{product.price}}</p> 
+                <button (click) = "buyProduct(product.id)">Buy now</button>
+            </div>    
+        </div>
+        
+    </div>
+</div>

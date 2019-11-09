@@ -4,7 +4,6 @@
         <a routerLink="market/new">Create a new store</a>
         <a (click)="logout()" id="logout">logout</a>
     </div>     
-    <!-- <div [ngClass] = "tokenService.get() ? 'main-navbar' : 'main-navbar-none'"> -->
     <div [ngClass] = "tokenService.get() ? 'main-navbar' : 'main-navbar-none'">
         <router-outlet></router-outlet>
     </div>

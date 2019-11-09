@@ -1,14 +1,22 @@
 * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-h1 {
+.title  {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h4{
+    color: #818181;
 }
 h3 {
-    margin: 40px;
+    margin: 20px;
 }
-.container { 
+
+.container {
+    margin-left: 20px;
+}
+.content { 
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -19,14 +27,14 @@ h3 {
     width: 220px;
     min-height: 250px;
     max-height: 300px;
-    margin: 40px;
+    margin: 15px;
     cursor: pointer;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 .card:hover {
-    transform: scale(1.2);
+    transform: scale(1.15);
 }
 
 .card img {

@@ -5,7 +5,7 @@ import { Market } from './Market';
   providedIn: 'root'
 })
 export class MarketService {
-
+  
   constructor(private http: HttpClient) { }
 
   createMarket(market) : any {

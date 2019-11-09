@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   markets: Market[];
   categories: string[] = [];
-  constructor(private marketService : MarketService, private tokenService: TokenService, private _marketData: SharedMarketService, private router: Router) { }
+  constructor(private marketService : MarketService, private _marketData: SharedMarketService, private router: Router) { }
 
   ngOnInit() {
     this.marketService.markets().subscribe(
