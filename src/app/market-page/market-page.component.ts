@@ -21,7 +21,7 @@ export class MarketPageComponent implements OnInit {
   currentUser; 
 
   productForm : FormGroup;
-  imagePreview: any  = "../../assets/GalleryIcon.jpg";
+  imagePreview: any;
 
   cardOn: boolean =  false;
 
@@ -90,6 +90,7 @@ export class MarketPageComponent implements OnInit {
     this.productService.create(this.market.id, formData).subscribe( 
     (response : Product) => {
       this.products.push(response)
+      this.showCard()
     }, 
     error => {
       console.log(error)
@@ -102,11 +103,11 @@ export class MarketPageComponent implements OnInit {
       deleted => {
         if(deleted){
           console.log(deleted);
-         const productDeletedIndex =  this.products.findIndex((product : Product) => {
+         const productDeletedIndex=  this.products.findIndex((product : Product) => {
             return product.id === product_id;
           })
           console.log(productDeletedIndex);
-          this.products.splice(0 , productDeletedIndex || 1); 
+          this.products.splice(productDeletedIndex , 1); 
         }
       },
       error => {
