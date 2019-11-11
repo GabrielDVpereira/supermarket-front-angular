@@ -9,9 +9,12 @@
     flex-direction: column;
     align-items: center;
     width: 700px;
+    border-radius: 4px;
 }
 #new-product-card input{
     padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
     
 }
 #new-product-card form{
@@ -35,7 +38,11 @@ h3 {
 .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
+}
+.container button{
+    width: 200px;
 }
 
 .content {
@@ -76,6 +83,20 @@ label#thumbnail img{
 label#thumbnail #preview{ 
     width: 180px;
     height: 150px;
+}
+
+.empty-market {
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #777;
+    font-weight: bold;
+}
+.empty-market img{
+    width: 100px;
+    height: 100px;
 }
 
 

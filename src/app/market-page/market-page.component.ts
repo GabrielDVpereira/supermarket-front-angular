@@ -91,6 +91,8 @@ export class MarketPageComponent implements OnInit {
     (response : Product) => {
       this.products.push(response)
       this.showCard()
+      this.productForm.reset();
+      this.imagePreview = '';
     }, 
     error => {
       console.log(error)

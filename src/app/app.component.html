@@ -1,6 +1,5 @@
     <div [ngClass] = "tokenService.get() ? 'navbar' : 'navbar-none'">
         <a routerLink="home">Home</a>
-        <a routerLink="#">News</a>
         <a routerLink="market/new">Create a new store</a>
         <a (click)="logout()" id="logout">logout</a>
     </div>     

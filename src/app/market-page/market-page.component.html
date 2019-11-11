@@ -1,26 +1,27 @@
 <h1>{{market.name}}</h1>
-<button (click)="showCard()">{{cardOn  ?  'hide' : 'new product'}}</button>
-<div id="new-product-card"> 
-    <form [formGroup] = "productForm">
-        <label id="thumbnail" *ngIf = "!imagePreview; else thumbnail">
-            <img src="../../assets/GalleryIcon.jpg" alt="" >
-            <p>Add a photo</p>
-            <input type="file" (change)="onFileSelect($event)"/>
-        </label>
-        <div>
-            <p>Name</p>
-            <input placeholder="Name" formControlName="name"/>
-        </div>
-        <div>
-            <p>price</p>
-            <input placeholder="R$" formControlName="price"/>
-        </div>
-    </form>
-    <button (click)="submitForm()">Create</button>
-</div>
+
 <div class="container">
     <h3>Check out some awesome items!</h3>
-    <div class="content">
+    <button (click)="showCard()">{{cardOn  ?  'hide' : 'new product'}}</button>
+    <div id="new-product-card"> 
+        <form [formGroup] = "productForm">
+            <label id="thumbnail" *ngIf = "!imagePreview; else thumbnail">
+                <img src="../../assets/GalleryIcon.jpg" alt="" >
+                <p>Add a photo</p>
+                <input type="file" (change)="onFileSelect($event)"/>
+            </label>
+            <div>
+                <p>Name</p>
+                <input placeholder="Name" formControlName="name"/>
+            </div>
+            <div>
+                <p>price</p>
+                <input placeholder="R$" formControlName="price"/>
+            </div>
+        </form>
+        <button (click)="submitForm()">Create</button>
+    </div>
+    <div class="content" *ngIf="products.length; else noProducts">
         <div class="products" *ngFor = "let product of products">
             <div class="products">
                 <img src = {{product.thumbnail_url}} heigth = "200px" width = "200px">    
@@ -36,4 +37,11 @@
             <img id="preview" [src]="imagePreview" alt="">
             <input type="file" (change)="onFileSelect($event)"/>
         </label>
+</ng-template>
+
+<ng-template #noProducts>
+    <div class="empty-market">
+        <img src="../../assets/empty.png">
+        <p>This market doesn't have any products yet</p>
+    </div>
 </ng-template>
