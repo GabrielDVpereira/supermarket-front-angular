@@ -1,7 +1,7 @@
 <h1>{{market.name}}</h1>
 
 <div class="container">
-    <h3>Check out some awesome items!</h3>
+    <h3>Add a new product to your market</h3>
     <button (click)="showCard()">{{cardOn  ?  'hide' : 'new product'}}</button>
     <div id="new-product-card"> 
         <form [formGroup] = "productForm">
